@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = icon href ="./icon/moon.png" type = "image/x-icon">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            text-align: center;
+
+        }
+
+        img {
+            width: 100%;
+            max-width: 100px; /* Tamaño máximo de la imagen */
+            height: auto; /* Mantener la proporción */
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                font-size: 50%;
+            }
+        }
+
+        /* Estilos para la ventana emergente */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para la caja de texto */
+        #dashboardContent {
+            width: 100%;
+            height: 200px;
+            margin-top: 10px;
+            resize: vertical;
+            padding: 5px;
+        }
+
+        /* Estilos para el formulario de edición */
+        .edit-form {
+            margin-top: 20px;
+        }
+
+        .edit-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .edit-form input[type="text"],
+        .edit-form select {
+            width: calc(25% - 20px); /* 25% del ancho menos el padding */
+            padding: 8px;
+            margin-bottom: 20px;
+        }
+
+        .edit-form input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .edit-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #dashboardContent {
+            display: none;
+        }
+
+
+li {
+  color: inherit; /* Heredar el color de su elemento padre (#table-of-contents) */
+				}
+				       button {
+            padding: 10px 20px;
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 3%;
+        }
+
+        a {
+            color: #5599ff;
+            text-decoration: none;
+            font-size: 23px;
+            text-transform: uppercase;
+        }
+
+        a:hover {
+            color: #80bfff;
+        }
+
+        /* Evitar que los hipervínculos cambien de color al hacer clic */
+        .entry a:active {
+            color: #5599ff;
+        }
+   .imagen-22x22 img {
+    width: 22px;
+    height: 22px;
+}
+
+.izquierda td {
+    text-align: left;
+}
+		</style>
+</head>
+<body>
+    <table>
+
+        <tr>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 13" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 14" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 15" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 16" id="dashboard_icons"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 13" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 14" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 15" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 16" id="dashboard_icons"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 13" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 14" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 15" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 16" id="dashboard_icons"></a></td>
+        </tr>
+
+
+
+        <tr>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 13" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 14" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 15" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 16" id="dashboard_icons"></a></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 13" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 14" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 15" id="dashboard_icons"></a></td>
+            <td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Icon 16" id="dashboard_icons"></a></td>
+        </tr>
+    </table>
+
+
+
+
+
+    <!-- Caja de texto para el contenido de index.html -->
+    <textarea id="dashboardContent" readonly></textarea>
+
+    <!-- Ventana emergente -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="edit-form">
+                <label for="lineNumber">Número de línea:</label>
+                <select id="lineNumber" onchange="loadLineContent()">
+                    <!-- Options will be added dynamically -->
+                </select>
+                <label for="altText">Nombre (alt):</label>
+                <input type="text" id="altText">
+                <label for="imageUrl">URL de la imagen:</label>
+                <input type="text" id="imageUrl">
+                <label for="linkUrl">URL del enlace:</label>
+                <input type="text" id="linkUrl">
+                <!-- Nuevo campo para editar el texto -->
+                <label for="additionalText">Texto adicional:</label>
+                <input type="text" id="additionalText">
+                <input type="submit" value="Guardar" onclick="saveChanges()">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to make a GET request to the server
+        function makeGetRequest(url, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    callback(xhr.responseText);
+                }
+            };
+            xhr.send();
+        }
+
+        // Define the WebDAV server URL and the file path
+        const webdavServerUrl = "./"; <!-- modified to match your server URL -->
+        const filePath = "index.html";
+
+        // Construct the URL for the GET request
+        const fileUrl = webdavServerUrl + filePath;
+
+        // Make the GET request to the server
+        makeGetRequest(fileUrl, function (fileContent) {
+            // Display the file content
+            const fileContentTextarea = document.getElementById("dashboardContent");
+            fileContentTextarea.value = fileContent;
+
+            // Extract lines with <td> tag and add them as options in the select dropdown
+            const lines = fileContent.split('\n');
+            const selectDropdown = document.getElementById("lineNumber");
+            lines.forEach((line, index) => {
+                if (line.includes("<td>")) {
+                    const option = document.createElement("option");
+                    option.text = index + 1;
+                    option.value = index;
+                    selectDropdown.add(option);
+                }
+            });
+        });
+
+        // Función para cargar el contenido de la línea seleccionada en el formulario
+        function loadLineContent() {
+            // Obtener el número de línea seleccionado
+            const selectedLineNumber = document.getElementById("lineNumber").value;
+
+            // Obtener el contenido de la línea seleccionada del textarea
+            const fileContent = document.getElementById("dashboardContent").value;
+            const lines = fileContent.split('\n');
+            const selectedLine = lines[selectedLineNumber];
+
+            // Extraer los valores de alt, imageUrl y linkUrl de la línea seleccionada
+            const altMatch = selectedLine.match(/alt="([^"]*)"/);
+            const imageUrlMatch = selectedLine.match(/src="([^"]*)"/);
+            const linkUrlMatch = selectedLine.match(/href="([^"]*)"/);
+
+            // Precargar los valores en las cajetillas del formulario
+            document.getElementById("altText").value = altMatch ? altMatch[1] : '';
+            document.getElementById("imageUrl").value = imageUrlMatch ? imageUrlMatch[1] : '';
+            document.getElementById("linkUrl").value = linkUrlMatch ? linkUrlMatch[1] : '';
+        }
+
+        // Funciones para la ventana emergente
+        var modal = document.getElementById('myModal');
+
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function saveChanges() {
+            // Get selected line number
+            const selectedLineNumber = document.getElementById("lineNumber").value;
+
+            // Get values from the form
+            const altText = document.getElementById("altText").value;
+            const imageUrl = document.getElementById("imageUrl").value;
+            const linkUrl = document.getElementById("linkUrl").value;
+            const additionalText = document.getElementById("additionalText").value;
+
+            // Construct the updated line
+            const updatedLine = `<td><a href="${linkUrl}" target="_blank"><img src="${imageUrl}" alt="${altText}" id="dashboard_icons">${additionalText}</a></td>`;
+
+            // Make a PUT request to update the specific line
+            const updatedContent = document.getElementById("dashboardContent").value.split('\n').map((line, index) => {
+                if (index == selectedLineNumber) {
+                    return updatedLine;
+                } else {
+                    return line;
+                }
+            }).join('\n');
+
+            // Save the updated content as a new file
+            const updatedFilePath = "index.html";
+            const updatedFileUrl = webdavServerUrl + updatedFilePath;
+            makePutRequest(updatedFileUrl, updatedContent);
+
+            // Close the modal
+            closeModal();
+    // Reload the page
+    location.reload();
+
+        }
+
+
+        // Function to make a PUT request to the server
+        function makePutRequest(url, data) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("PUT", url, true);
+            xhr.setRequestHeader('Content-Type', 'text/html');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log("Archivo actualizado exitosamente.");
+                    } else {
+                        console.error("Error al actualizar el archivo:", xhr.status);
+                    }
+                }
+            };
+            xhr.send(data);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ################################################# -->
+<div class="imagen-22x22">
+<br><a href="javascript:buscar('/');" <a href="javascript:buscar('rp4');" onclick="document.getElementById('buscar').value = this.innerHTML;">rp4</a> - <a href="javascript:buscar('vps');" onclick="document.getElementById('buscar').value = this.innerHTML;">vps</a> - <a href="javascript:buscar('IA');" onclick="document.getElementById('buscar').value = this.innerHTML;">IA</a><br><br>
+<script>
+function abrirPrimerResultado(event) {
+  if (event.keyCode === 13) { // Verificar si se presionó la tecla Enter
+    event.preventDefault(); // Evitar la ejecución predeterminada del evento
+
+    var buscar = document.getElementById('buscar');
+    var filtro = buscar.value.toUpperCase();
+    var enlaces = document.querySelectorAll('#tabla li a');
+
+    for (var i = 0; i < enlaces.length; i++) {
+      var enlace = enlaces[i];
+      var textoEnlace = enlace.innerText.toUpperCase();
+
+      if (textoEnlace.indexOf(filtro) > -1) {
+        var url = enlace.href;
+        window.open(url, '_blank');
+        break; // Salir del bucle una vez que se encuentre el primer resultado
+      }
+    }
+  }
+}
+</script>
+
+<input type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar..."  onkeydown="abrirPrimerResultado(event)">
+
+
+<table id=tabla class="izquierda">
+<thead></thead>
+
+
+
+<tr>
+<td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Enlace 1" id="dashboard_icons">Enlace 1 vps</a></td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/uGeek/WDDashboard" target="_blank"><img src="icon.svg" alt="Enlace 2" id="dashboard_icons">Enlace 2 rp4</a></td>
+</tr>
+
+
+
+<!-- ################################################# -->
+<!-- Añade encima la nueva linea -->
+</table>
+
+
+<script>
+      // Función para buscar en la tabla
+      function buscar() {
+        let input, filter, tabla, tr, td, i, j, encontrado;
+        input = document.getElementById("buscar");
+        filter = input.value.toUpperCase();
+        tabla = document.getElementById("tabla");
+        tr = tabla.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          encontrado = false;
+          td = tr[i].getElementsByTagName("td");
+          for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              encontrado = true;
+              break;
+            }
+          }
+          if (encontrado) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+
+
+</div>
+
+<!-- ################################################# -->
+<!-- Codigo Boton añadir linea -->
+<form id="addForm">
+
+        <button type="submit">Añadir al Listado</button>
+    </form>
+
+    <script>
+        document.getElementById("addForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const imageUrl = document.getElementById("imageUrl").value;
+            const altText = document.getElementById("altText").value;
+            const linkUrl = document.getElementById("linkUrl").value;
+
+            const newLine = `<tr>\n<td><a href="${linkUrl}" target="_blank"><img src="${imageUrl}" alt="${altText}" id="dashboard_icons"></a></td>\n</tr>\n`;
+
+            // Construct the full content to be added
+            const fullContent = `<!-- Añade encima la nueva linea -->\n${newLine}`;
+
+            // Make a GET request to fetch the current content of index.html
+            fetch('index.html')
+            .then(response => response.text())
+            .then(data => {
+                // Insert the new content above the specified line
+                const updatedContent = data.replace("<!-- Añade encima la nueva linea -->", fullContent);
+
+                // Make a PUT request to update index.html with the new content
+                fetch('index.html', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'text/html'
+                    },
+                    body: updatedContent
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Se ha añadido la línea al listado exitosamente.");
+// Reload the page
+    location.reload();
+                    } else {
+                        alert("Hubo un error al añadir la línea al listado.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("Hubo un error al añadir la línea al listado.");
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Hubo un error al obtener el contenido de index.html.");
+            });
+        });
+    </script>
+
+
+
+<!-- ################################################# -->
+    <!-- Botón Editar -->
+    <button onclick="openModal()">Editar</button>
+
+
+
+
+
+</body>
+</html>
